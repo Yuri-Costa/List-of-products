@@ -10,20 +10,18 @@ namespace Listing
         public float Preco { get; set; }
 
         public Produto(){}
+
         List<Produto> produtos = new List<Produto>();
-            private int senha = 4444;
-            public int Senha { get{return senha;} }
-            
-            
+        private int senha = 4444;
+        public int Senha { get{return senha;} }
         public Produto ( int _codigo, string _nome, float _preco){
 
-            
             this.Codigo = _codigo;
             this.Nome = _nome;
             this.Preco = _preco;
         }
 
-        public void MostrarLista(){
+            public void MostrarLista(){
             produtos.Add(new Produto(1, "camiseta", 20));
             produtos.Add(new Produto(2, "moletom", 100));
             produtos.Add(new Produto(3, "jaqueta", 120));
@@ -44,49 +42,50 @@ namespace Listing
         }
 
             public void ComprarItem(){
-                Console.ForegroundColor=ConsoleColor.Magenta;
+            Console.ForegroundColor=ConsoleColor.Magenta;
+
             int resposta = int.Parse(Console.ReadLine());
-              Console.ForegroundColor=ConsoleColor.Blue;
+            Console.ForegroundColor=ConsoleColor.Blue;
+
            switch (resposta)
-           {
-                case 1:
-                Console.WriteLine($"insira a senha para a compra da camiseta!");
-                PedirSenha();
-                   break;
+            {
+            case 1:
+            Console.WriteLine($"insira a senha para a compra da camiseta!");
+            PedirSenha();
+            break;
 
-                case 2:
-                Console.WriteLine($"insira a senha para compra do moletom!");
-                 PedirSenha();
-                   break;
+            case 2:
+            Console.WriteLine($"insira a senha para compra do moletom!");
+            PedirSenha();
+            break;
 
-                case 3:
-                Console.WriteLine($"insira a senha para compra da jaqueta!");
-                 PedirSenha();
-                   break;
+            case 3:
+            Console.WriteLine($"insira a senha para compra da jaqueta!");
+            PedirSenha();
+            break;
 
-                case 4:
-                Console.WriteLine($"insira a senha para compra do boné!");
-                 PedirSenha();
-                   break;
+            case 4:
+            Console.WriteLine($"insira a senha para compra do boné!");
+            PedirSenha();
+            break;
 
-                case 5:
-                Console.WriteLine($"insira a senha para compra do tenis!");
-                 PedirSenha();
-                   break;
+            case 5:
+            Console.WriteLine($"insira a senha para compra do tenis!");
+            PedirSenha();
+            break;
 
-               default:
-                   break;
-           }
-
-            }        
+            default:
+            break;
+           }}        
 
             public void PedirSenha(){
-              int senhaDeAcesso = int.Parse(Console.ReadLine());
-                if (senhaDeAcesso == Senha)
-                {Console.ForegroundColor=ConsoleColor.Green;
-                 Console.WriteLine($"translação aceita!");
-                }else{Console.ForegroundColor=ConsoleColor.Red;
-                    Console.WriteLine("traslação negada! senha incorreta!");}
+            int senhaDeAcesso = int.Parse(Console.ReadLine());
+            if (senhaDeAcesso == Senha)
+            {Console.ForegroundColor=ConsoleColor.Green;
+            Console.WriteLine($"translação aceita!");
+            }
+            else{Console.ForegroundColor=ConsoleColor.Red;
+            Console.WriteLine("traslação negada! senha incorreta!");}
             }
         
         
